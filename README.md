@@ -1,438 +1,352 @@
+Claro! Aqui está um resumo completo do que foi discutido e implementado no código HTML para o site "EduFlash":
+
+### Resumo do Projeto "EduFlash"
+
+#### 1. Estrutura do Documento
+- **Tipo de Documento**: HTML5
+- **Linguagem**: Português (pt-br)
+- **Viewport**: Configurado para responsividade em dispositivos móveis.
+
+#### 2. Fontes Utilizadas
+- **Fonte Principal**: Poppins
+  - **Pesos**: 300, 400, 500, 600, 700
+  - **Importação**: A fonte é importada do Google Fonts.
+
+#### 3. Cores Utilizadas
+- **Cor do "Edu"**: `#d7bde2` (lilás claro)
+- **Cor do "Flash"**: `#74ced8` (azul claro)
+- **Cor de Fundo**: Branco (`#ffffff`)
+- **Cor de Texto**: Preto (`#000000`)
+- **Cor de Acento**: `#e5d9fe`
+
+#### 4. Layout e Estilo
+- **Cabeçalho**: Fixo no topo, com fundo branco e links de navegação.
+- **Seção Hero**: Apresenta um título chamativo e uma imagem flutuante.
+- **Recursos**: Seção que descreve as funcionalidades do EduFlash com cartões interativos.
+- **Estatísticas**: Seção que apresenta dados sobre a eficácia do EduFlash.
+- **Seção de Chamada para Ação (CTG)**: Incentiva os usuários a se inscreverem.
+- **Rodapé**: Contém informações de contato, links para redes sociais e informações legais.
+
+#### 5. Interatividade
+- **Botão de Alternância de Tema**: Permite que os usuários alternem entre temas claro e escuro.
+- **Animações**: Elementos flutuantes e cartões que respondem ao hover.
+
+### Código HTML Completo
+
+Aqui está o código HTML completo que incorpora todas as alterações e elementos discutidos:
 
 ```html
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mentor Virtual Inclusivo</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
-
-    :root {
-      --color-primary: #314ee1; /* Cor primária */
-      --color-secondary: #8c77f5; /* Cor secundária */
-      --color-accent: #422ec1; /* Cor de acento */
-      --color-bg: #ffffff; /* Cor de fundo */
-      --color-text: #000000; /* Cor do texto */
-      --border-radius: 14px;
-      --shadow-soft: 0 8px 24px rgba(139, 111, 240, 0.3);
-      --transition-speed: 0.4s;
-      --max-width: 900px;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: linear-gradient(135deg, var(--color-primary) 20%, var(--color-secondary) 60%);
-      color: var(--color-text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 2rem 1rem;
-    }
-    main {
-      background: var(--color-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-soft);
-      width: 100%;
-      max-width: var(--max-width);
-      display: flex;
-      flex-wrap: wrap;
-      overflow: hidden;
-    }
-    header {
-      width: 100%;
-      background: var(--color-primary);
-      padding: 2rem 2.5rem;
-      color: white;
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
-      box-shadow: inset 0 -4px 10px rgba(0,0,0,0.15);
-      font-family: 'Montaser Arabic', cursive;
-      user-select: none;
-    }
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 2.8rem;
-      letter-spacing: 0.04em;
-      text-shadow: 0 0 10px rgba(139,111,240,0.7);
-    }
-    header p {
-      margin-top: 0.4rem;
-      font-weight: 500;
-      font-size: 1.1rem;
-      color: var(--color-accent);
-      max-width: 600px;
-      font-family: 'Nunito', sans-serif;
-      user-select: none;
-    }
-    section.form-section {
-      flex: 2 1 500px;
-      padding: 2rem 3rem 2rem 3rem;
-      background: var(--color-bg);
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-      font-family: 'Nunito', sans-serif;
-    }
-    form label {
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
-      user-select: none;
-    }
-    select, textarea, input[type="text"] {
-      border-radius: var(--border-radius);
-      border: 2px solid var(--color-primary);
-      font-size: 1rem;
-      padding: 14px 18px;
-      width: 100%;
-      transition: border-color var(--transition-speed);
-      font-family: inherit;
-      resize: vertical;
-      box-shadow: inset 0 3px 10px var(--color-accent);
-    }
-    select:focus, textarea:focus, input[type="text"]:focus {
-      outline: none;
-      border-color: var(--color-secondary);
-      box-shadow: 0 0 10px var(--color-secondary);
-    }
-    textarea {
-      min-height: 120px;
-      line-height: 1.5;
-    }
-    button {
-      background: var(--color-primary);
-      color: var(--color-bg);
-      font-weight: 700;
-      font-size: 1.35rem;
-      border: none;
-      border-radius: var(--border-radius);
-      padding: 16px 0;
-      cursor: pointer;
-      box-shadow: 0 8px 16px rgba(139,111,240,0.7);
-      transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
-      user-select: none;
-      font-family: 'Nunito', sans-serif;
-    }
-    button:hover,
-    button:focus {
-      background: var(--color-secondary);
-      box-shadow: 0 10px 30px rgba(136,226,235,0.85);
-      outline: none;
-    }
-
-    section.chat-section {
-      flex: 1 1 350px;
-      background: var(--color-accent);
-      border-top-right-radius: var(--border-radius);
-      border-bottom-right-radius: var(--border-radius);
-      box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.4);
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1.8rem;
-      max-height: 620px;
-      overflow: hidden;
-      position: relative;
-      font-family: 'Nunito', sans-serif;
-    }
-    #chat {
-      flex-grow: 1;
-      overflow-y: auto;
-      padding-right: 1rem;
-      scrollbar-width: thin;
-      scrollbar-color: var(--color-primary) transparent;
-    }
-    #chat::-webkit-scrollbar {
-      width: 8px;
-    }
-    #chat::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    #chat::-webkit-scrollbar-thumb {
-      background-color: var(--color-primary);
-      border-radius: 20px;
-    }
-    .message {
-      max-width: 80%;
-      margin-bottom: 1.25rem;
-      padding: 12px 18px;
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      font-size: 1rem;
-      line-height: 1.4;
-      user-select: text;
-      word-wrap: break-word;
-    }
-    .mentor {
-      background: var(--color-primary);
-      color: var(--color-bg);
-      align-self: flex-start;
-      border-radius: var(--border-radius)  var(--border-radius)  var(--border-radius)  0;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.15);
-      filter: drop-shadow(0 1px 0 rgba(0,0,0,0.15));
-      animation: fadeInUp 0.5s ease forwards;
-    }
-    .user {
-      background: var(--color-secondary);
-      color: var(--color-text);
-      align-self: flex-end;
-      border-radius: var(--border-radius)  var(--border-radius)  0 var(--border-radius);
-      font-weight: 600;
-      animation: fadeInUp 0.4s ease forwards;
-    }
-    #points {
-      font-weight: 700;
-      color: var(--color-primary);
-      font-size: 1.3rem;
-      margin-top: 1rem;
-      user-select: none;
-      text-align: center;
-      letter-spacing: 0.02em;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translate3d(0, 8px, 0);
-      }
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-    @media (max-width: 900px) {
-      main {
-        flex-direction: column;
-        max-width: 600px;
-      }
-      section.chat-section {
-        order: -1;
-        border-radius: var(--border-radius) var(--border-radius) 0 0;
-        max-height: 350px;
-        padding-bottom: 1rem;
-      }
-      section.form-section {
-        padding: 1.5rem 1.5rem 2rem 1.5rem;
-      }
-    }
-    /* Screen reader only */
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      border: 0;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      white-space: nowrap;
-      user-select: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduFlash - Seu Acompanhante de Estudos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #74ced8;
+            --edu-color: #d7bde2; /* Cor do Edu alterada para lilás claro */
+            --flash-color: #74ced8;
+            --accent: #e5d9fe;
+            --dark: #000000;
+            --light: #ffffff;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background-color: var(--light); /* Fundo branco */
+            color: var(--dark);
+        }
+        
+        .btn-primary {
+            background: var(--flash-color);
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #5cb8c2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card {
+            transition: all 0.3s;
+            border-radius: 12px;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, var(--flash-color), var(--accent));
+            color: white;
+        }
+        
+        [data-theme="dark"] {
+            --primary: #5cb8c2;
+            --edu-color: #d7bde2; /* Cor do Edu alterada para lilás claro */
+            --flash-color: #5cb8c2;
+            --accent: #d0bdf4;
+            --dark: #ffffff;
+            --light: #121212;
+        }
+        
+        .logo-edu {
+            color: #d7bde2; /* Cor do Edu alterada para lilás claro */
+        }
+        
+        .logo-flash {
+            color: #74ced8;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Mentor Virtual Inclusivo</h1>
-      <p>Seu assistente pessoal para aprender melhor e cuidar do seu bem-estar.</p>
+    <!-- Cabeçalho -->
+    <header class="fixed w-full z-10" style="background-color: var(--light);"> <!-- Fundo branco -->
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-book-open text-xl" style="color: var(--flash-color);"></i>
+                    <span class="text-2xl font-bold">
+                        <span class="logo-edu">Edu</span><span class="logo-flash">Flash</span>
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="font-medium hover:text-flash-color transition">Recursos</a>
+                    <a href="#" class="font-medium hover:text-flash-color transition">Planos</a>
+                    <a href="#" class="font-medium hover:text-flash-color transition">Sobre</a>
+                    <a href="#" class="font-medium hover:text-flash-color transition">Contato</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#" class="block py-2 hover:text-flash-color transition">Recursos</a>
+                <a href="#" class="block py-2 hover:text-flash-color transition">Planos</a>
+                <a href="#" class="block py-2 hover:text-flash-color transition">Sobre</a>
+                <a href="#" class="block py-2 hover:text-flash-color transition">Contato</a>
+                <button class="mt-2 py-2 px-4 btn-primary rounded-lg w-full">Entrar</button>
+            </div>
+        </nav>
     </header>
-    <section class="form-section" aria-label="Formulário para obter ajuda do mentor virtual">
-      <form id="mentorForm" autocomplete="off">
-        <label for="difficulty">Qual sua maior dificuldade de estudo atualmente?</label>
-        <select id="difficulty" required aria-required="true" aria-describedby="difficultyHelp" >
-          <option value="" disabled selected>Selecione</option>
-          <option value="organizacao">Organização e planejamento</option>
-          <option value="foco">Manter o foco</option>
-          <option value="conteudo">Compreender o conteúdo</option>
-          <option value="ansiedade">Ansiedade ou estresse</option>
-          <option value="outro">Outro</option>
-        </select>
-        <div id="difficultyHelp" class="sr-only">Escolha a maior dificuldade que você está enfrentando nos estudos.</div>
-
-        <label for="feeling">Como você está se sentindo hoje?</label>
-        <select id="feeling" required aria-required="true" aria-describedby="feelingHelp">
-          <option value="" disabled selected>Selecione</option>
-          <option value="motivado">Motivado e confiante</option>
-          <option value="cansado">Cansado ou desmotivado</option>
-          <option value="ansioso">Ansioso ou preocupado</option>
-          <option value="feliz">Feliz e animado</option>
-          <option value="triste">Triste ou desanimado</option>
-        </select>
-        <div id="feelingHelp" class="sr-only">Informe qual é seu estado emocional atual.</div>
-
-        <label for="goal">Qual seu objetivo principal nos estudos?</label>
-        <select id="goal" required aria-required="true" aria-describedby="goalHelp">
-          <option value="" disabled selected>Selecione</option>
-          <option value="melhorar_notas">Melhorar as notas</option>
-          <option value="concluir_tarefas">Concluir tarefas a tempo</option>
-          <option value="reduzir_ansiedade">Reduzir ansiedade</option>
-          <option value="aprender_mais">Aprender mais</option>
-          <option value="outro">Outro</option>
-        </select>
-        <div id="goalHelp" class="sr-only">Escolha o principal objetivo que deseja alcançar com seus estudos.</div>
-
-        <button type="submit" aria-label="Enviar dados para o mentor virtual">Pedir ajuda ao Mentor</button>
-      </form>
-      <div id="points" aria-live="polite" aria-atomic="true">Pontos: 0</div>
+    
+    <!-- Seção Hero -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28" style="background-color: #bde4e7;">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col-reverse md:flex-row items-center">
+                <div class="w-full md:w-1/2 mt-10 md:mt-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+                        Transforme sua <span style="color: var(--flash-color);">rotina</span> de estudos
+                    </h1>
+                    <p class="mt-4 text-lg">
+                        O EduFlash é seu parceiro digital para organização, motivação e produtividade nos estudos. Crie planos personalizados, acompanhe seu progresso e alcance seu potencial máximo.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="px-8 py-3 btn-primary rounded-lg font-semibold">
+                            Comece agora
+                        </button>
+                        <button class="px-8 py-3 border border-flash-color text-flash-color rounded-lg font-semibold hover:bg-opacity-10 hover:bg-flash-color">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-1/2">
+                    <div class="relative w-full max-w-md mx-auto">
+                        <img src="https://i.postimg.cc/HLyx6mQH/logo-tomaz-removebg-preview.png" alt="Logo Tomaz" class="w-full h-auto floating">
+                        <div class="absolute -bottom-4 -left-4 w-24 h-24 rounded-full z-0" style="background-color: var(--accent); opacity: 0.3;"></div>
+                        <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full z-0" style="background-color: var(--accent); opacity: 0.3;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section class="chat-section" aria-label="Chat entre o usuário e o mentor virtual" role="log" aria-live="polite" aria-relevant="additions">
-      <div id="chat" tabindex="0" aria-live="polite" aria-atomic="false" >
-        <div class="message mentor" tabindex="-1">Olá! Estou aqui para ajudar você a aprender melhor e se sentir bem. Por favor, responda ao formulário ao lado para que eu possa te orientar.</div>
-      </div>
+    
+    <!-- Recursos -->
+    <section class="py-20 bg-white/80" style="background-color: rgba(var(--light), 0.8);">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold">Como o EduFlash te ajuda</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Recursos poderosos projetados para elevar seus estudos a um novo nível
+                </p>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card p-8 bg-white rounded-lg shadow-sm hover:shadow-md" style="background-color: var(--light);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--accent);">
+                        <i class="fas fa-calendar-alt text-xl" style="color: var(--flash-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Planejamento Inteligente</h3>
+                    <p>
+                        Crie cronogramas de estudo adaptáveis que se ajustam ao seu progresso real, com lembretes inteligentes para manter você no caminho certo.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card p-8 bg-white rounded-lg shadow-sm hover:shadow-md" style="background-color: var(--light);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--accent);">
+                        <i class="fas fa-chart-pie text-xl" style="color: var(--flash-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Análise de Progresso</h3>
+                    <p>
+                        Visualize gráficos detalhados do seu desempenho, identifique pontos fracos e receba sugestões personalizadas para melhoria.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card p-8 bg-white rounded-lg shadow-sm hover:shadow-md" style="background-color: var(--light);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--accent);">
+                        <i class="fas fa-brain text-xl" style="color: var(--flash-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Técnicas Avançadas</h3>
+                    <p>
+                        Acesse métodos comprovados como Pomodoro, Feynman e espaçamento, integrados diretamente na sua rotina de estudos.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card p-8 bg-white rounded-lg shadow-sm hover:shadow-md" style="background-color: var(--light);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--accent);">
+                        <i class="fas fa-mobile-alt text-xl" style="color: var(--flash-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sincronização Total</h3>
+                    <p>
+                        Seus dados sincronizados em todos dispositivos. Estude em qualquer lugar, a qualquer hora, sem perder seu progresso.
+                    </p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card p-8 bg-white rounded-lg shadow-sm hover:shadow-md" style="background-color: var(--light);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--accent);">
+                        <i class="fas fa-question-circle text-xl" style="color: var(--flash-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Gerador de Questões</h3>
+                    <p>
+                        Crie simulados e questões baseadas no seu material de estudo para testar seu conhecimento de forma eficiente.
+                    </p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card p-8 bg-white rounded-lg shadow-sm hover:shadow-md" style="background-color: var(--light);">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background-color: var(--accent);">
+                        <i class="fas fa-users text-xl" style="color: var(--flash-color);"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Comunidade</h3>
+                    <p>
+                        Conecte-se com outros estudantes, compartilhe materiais e participe de grupos de estudo temáticos.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
-
-  <script>
-    const form = document.getElementById('mentorForm');
-    const chat = document.getElementById('chat');
-    const pointsDisplay = document.getElementById('points');
-
-    let points = 0;
-
-    const suggestions = {
-      organizacao: [
-        "Faça uma lista diária de tarefas para organizar seu dia.",
-        "Divida seus estudos em blocos de 25 minutos com pequenas pausas (Técnica Pomodoro).",
-        "Use uma agenda ou app para controlar prazos e provas."
-      ],
-      foco: [
-        "Desligue as notificações do celular enquanto estuda.",
-        "Encontre um local tranquilo e livre de distrações.",
-        "Estabeleça pequenas metas para cada sessão de estudo."
-      ],
-      conteudo: [
-        "Tente explicar o conteúdo para alguém, isso ajuda a fixar o que aprendeu.",
-        "Utilize vídeos e animações para facilitar a compreensão.",
-        "Não tenha medo de perguntar aos professores ou colegas quando algo não estiver claro."
-      ],
-      ansiedade: [
-        "Pratique técnicas de respiração profunda para aliviar o estresse.",
-        "Reserve momentos para atividades que te relaxem, como caminhada ou música.",
-        "Lembre-se que sentir ansiedade é normal, e pedir ajuda é um ato de coragem."
-      ],
-      motivado: [
-        "Aproveite essa energia para avançar nos estudos e revisar conteúdos.",
-        "Estabeleça desafios para manter a motivação sempre alta.",
-        "Compartilhe seu entusiasmo com colegas para criar uma rede de apoio."
-      ],
-      cansado: [
-        "Tente dedicar alguns minutos ao descanso para renovar as energias.",
-        "Durma bem, pois o sono é fundamental para o aprendizado.",
-        "Organize seus estudos para evitar sobrecarga."
-      ],
-      ansioso: [
-        "Identifique os gatilhos da sua ansiedade e converse com alguém sobre eles.",
-        "Pratique exercícios físicos para liberar tensões.",
-        "Considere técnicas de meditação para acalmar a mente."
-      ],
-      feliz: [
-        "Use essa disposição para ajudar colegas e trocar conhecimentos.",
-        "Refletir sobre suas conquistas fortalece a confiança.",
-        "Mantenha hábitos que promovam sua felicidade."
-      ],
-      triste: [
-        "Procure conversar com alguém de confiança sobre seus sentimentos.",
-        "Não se cobre demais, todos temos dias difíceis.",
-        "Atividades físicas e contato com a natureza podem ajudar."
-      ],
-      melhorar_notas: [
-        "Estabeleça uma rotina de estudos focada nas matérias com mais dificuldade.",
-        "Faça resumos e revise com frequência.",
-        "Peça feedback aos professores para saber onde melhorar."
-      ],
-      concluir_tarefas: [
-        "Priorize as tarefas mais urgentes e que exigem mais esforço.",
-        "Divida os trabalhos grandes em etapas menores para facilitar o progresso.",
-        "Evite deixar para o último momento."
-      ],
-      reduzir_ansiedade: [
-        "Incorpore pausas regulares durante o estudo para evitar sobrecarga.",
-        "Use técnicas de mindfulness para relaxar a mente.",
-        "Fale com profissionais caso a ansiedade esteja muito intensa."
-      ],
-      aprender_mais: [
-        "Explore conteúdos complementares para expandir seu conhecimento.",
-        "Participe de grupos de estudo para trocar experiências.",
-        "Pratique exercícios para fixar o conteúdo."
-      ]
-    };
-
-    function addMessage(text, sender = 'mentor') {
-      const div = document.createElement('div');
-      div.classList.add('message', sender);
-      div.textContent = text;
-      div.setAttribute('tabindex', '-1');
-      chat.appendChild(div);
-      chat.scrollTop = chat.scrollHeight;
-      div.focus();
-    }
-
-    function chooseSuggestions(category) {
-      let key = category.toLowerCase().replace(/\s/g, '_');
-      if (suggestions[key]) {
-        return suggestions[key];
-      }
-      return ["Continue perseverando! Estou aqui para ajudar no que precisar."];
-    }
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-
-      const difficulty = form.difficulty.value;
-      const feeling = form.feeling.value;
-      const goal = form.goal.value;
-
-      if (!difficulty || !feeling || !goal) {
-        alert('Por favor, preencha todas as respostas.');
-        return;
-      }
-
-      addMessage(`Minha dificuldade: ${form.difficulty.options[form.difficulty.selectedIndex].text}`, 'user');
-      addMessage(`Como estou me sentindo: ${form.feeling.options[form.feeling.selectedIndex].text}`, 'user');
-      addMessage(`Meu objetivo principal: ${form.goal.options[form.goal.selectedIndex].text}`, 'user');
-
-      const difficultyAdvice = chooseSuggestions(difficulty);
-      const feelingAdvice = chooseSuggestions(feeling);
-      const goalAdvice = chooseSuggestions(goal);
-
-      function respondSequentially(messages, index = 0) {
-        if (index >= messages.length) return;
-        setTimeout(() => {
-          addMessage(messages[index]);
-          points++;
-          pointsDisplay.textContent = `Pontos: ${points}`;
-          respondSequentially(messages, index + 1);
-        }, 1500);
-      }
-
-      addMessage("Analisando suas respostas...", 'mentor');
-
-      setTimeout(() => {
-        addMessage("Aqui vão algumas sugestões para sua dificuldade:", 'mentor');
-        respondSequentially(difficultyAdvice);
-
-        setTimeout(() => {
-          addMessage("Agora, algumas dicas para seu estado emocional:", 'mentor');
-          respondSequentially(feelingAdvice);
-
-          setTimeout(() => {
-            addMessage("Por fim, para alcançar seu objetivo:", 'mentor');
-            respondSequentially(goalAdvice);
-          }, (feelingAdvice.length + 1) * 1600);
-        }, (difficultyAdvice.length + 1) * 1600);
-      }, 1500);
-
-      form.reset();
-      form.difficulty.focus();
-    });
-  </script>
-</body>
-</html>
-```
+    
+    <!-- Estatísticas -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Stat 1 -->
+                <div class="stats-card p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl font-bold mb-2">87%</div>
+                    <div class="text-lg">Melhoria na retenção de conteúdo</div>
+                    <div class="mt-4 text-sm opacity-80">Baseado em feedback de usuários</div>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="stats-card p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl font-bold mb-2">3.5x</div>
+                    <div class="text-lg">Mais produtividade</div>
+                    <div class="mt-4 text-sm opacity-80">Tempo de estudo bem aproveitado</div>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="stats-card p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl font-bold mb-2">10K+</div>
+                    <div class="text-lg">Estudantes ativos</div>
+                    <div class="mt-4 text-sm opacity-80">Juntando-se a cada mês</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção CTG -->
+    <section class="py-20" style="background-color: var(--accent);">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold">Pronto para transformar seus estudos?</h2>
+            <p class="mt-4 max-w-2xl mx-auto">
+                Comece hoje mesmo sua jornada rumo ao aprendizado efetivo e resultados extraordinários.
+            </p>
+            <button class="mt-8 px-10 py-4 btn-primary rounded-lg font-semibold text-lg">
+                Criar minha conta gratuita
+            </button>
+        </div>
+    </section>
+    
+    <!-- Rodapé -->
+    <footer class="py-12" style="background-color: var(--dark); color: var(--light);">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-book-open text-xl" style="color: var(--flash-color);"></i>
+                        <span class="text-xl font-bold">
+                            <span class="logo-edu">Edu</span><span class="logo-flash">Flash</span>
+                        </span>
+                    </div>
+                    <p style="opacity: 0.7;">
+                        Seu parceiro digital para estudos mais inteligentes e eficientes.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" style="opacity: 0.7;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="opacity: 0.7;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="opacity: 0.7;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="opacity: 0.7;"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Produto</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" style="opacity: 0.7;">Funcionalidades</a></li>
+                        <li><a href="#" style="opacity: 0.7;">Planos</a></li>
+                        <li><a href="#" style="opacity: 0.7;">Aplicativo</a></li>
+                        <li><a href="#" style="opacity: 0.7;">Novidades</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Recursos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" style
